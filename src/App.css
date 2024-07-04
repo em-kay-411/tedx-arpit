@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 .App {
   text-align: center;
   height: 2000px;
@@ -17,16 +19,14 @@
 .logo-entrance-container{
   border-radius: 10px;
   position: fixed;
+  height: 300px;
   /* left: 50%; */
   /* top: 50%; */
   transform: translate(-50%, -50%);
-  background-color: black;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 0vh;
-  width: 0vw;
   /* animation: appear ease-out 0.8s forwards; */
   /* animation-delay: 1s; */
 }
@@ -48,11 +48,75 @@
 .logo-entrance-img{
   opacity: 0;
   /* height: 30vw; */
-  animation: image-appear ease-out 1s forwards;
-  /* animation-delay: 1s; */
+  animation: image-appear ease-out 1.2s forwards;
+  animation-delay: 0.5s;
 }
 
 @keyframes image-appear{
+  0%{
+    opacity: 0;
+    transform: translate(0, 25px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+
+@media screen and  (max-width : 1200px) {
+  .building-image{
+    transform: translate(-35%, 12%);
+    height: 110vh;
+  }
+}
+
+.presents-text {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  color: white;
+  position: relative;
+  font-size: 1.3rem;
+  /* left: 18%; */
+  top: 25px;
+  animation: image-appear ease-out 1.2s forwards;
+  animation-play-state: paused;
+}
+
+.theme-name{
+  position: relative;
+  top: 50px;
+  color: white;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+.top-theme-name{
+  display: flex;
+  flex-direction: row;
+}
+
+.flip{
+  /* position: fixed; */
+  font-size: 7.5rem;
+  font-weight: bolder;
+  /* animation: tilt-n-move-shaking 0.3s 6; */
+}
+
+.the{
+  width: 40px;
+  margin-top: 85px;
+  font-size: 2rem;
+  animation: text-appear ease-out 2s forwards;
+}
+
+.bottom-theme-name{
+  margin-top: -15px;
+  transform-origin: center;
+  font-size: 5.5rem;
+  font-weight: bolder;
+  animation: ease-out forwards;
+}
+
+@keyframes text-appear {
   0%{
     opacity: 0;
   }
@@ -62,9 +126,66 @@
   }
 }
 
-@media screen and  (max-width : 1200px) {
-  .building-image{
-    transform: translate(-35%, 12%);
-    height: 110vh;
-  }
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(3px, 3px) rotate(3deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-3px, 3px) rotate(-3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes flipping-animation-y {
+  0% {transform : rotateY(0deg) translate(0, -30px);}
+  100% {transform : rotateY(180deg) translate(0, -30px);}
+}
+
+@keyframes flipping-animation-x {
+  0% {transform : rotateY(180deg) rotateX(0deg) translate(0, -30px); transform-origin: center;}
+  100% {transform : rotateY(180deg) rotateX(180deg) translate(0, 30px); transform-origin: center;}
+}
+
+.date-and-venue{
+  transform: translate(-28px, 50%);
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: 100;
+}
+
+.date-number{
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.th{
+  position: absolute;
+  font-size: 1.3rem;
+  transform: translate(56px, -30px);
+}
+
+.date-month-year {
+  position: absolute;
+  margin-top: -8px;
+  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.venue{
+
+  left: 70px;
+  font-size: 1.5rem;
+  position: relative;
+  text-align: left;
+  padding: 10px;
+  font-weight: 100;
+}
+
+.separation {
+  position: absolute;
+  left: 101px;
+  top: -8px;
+  font-size: 4rem;
+  font-weight: 10;
+  color: grey;
 }
