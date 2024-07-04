@@ -98,7 +98,16 @@
   /* position: fixed; */
   font-size: 7.5rem;
   font-weight: bolder;
-  /* animation: tilt-n-move-shaking 0.3s 6; */
+  animation: fall-down-animation 0.5s;
+}
+
+@keyframes fall-down-animation {
+  0% {
+    transform: scale(8);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 
 .the{
@@ -157,6 +166,10 @@
   font-weight: 100;
 }
 
+.date{
+  animation: left-entrance ease-in 1.5s forwards;
+}
+
 .th{
   position: absolute;
   font-size: 1.3rem;
@@ -164,6 +177,7 @@
 }
 
 .date-month-year {
+  width: 77px;
   position: absolute;
   margin-top: -8px;
   font-weight: bold;
@@ -172,7 +186,7 @@
 }
 
 .venue{
-
+  animation: right-entrance ease-in 1.5s forwards;
   left: 70px;
   font-size: 1.5rem;
   position: relative;
@@ -188,4 +202,26 @@
   font-size: 4rem;
   font-weight: 10;
   color: grey;
+}
+
+@keyframes left-entrance {
+  0%{
+    opacity : 0;
+    transform: translate(20px, 0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes right-entrance {
+  0%{
+    opacity : 0;
+    transform: translate(-20px, 0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }

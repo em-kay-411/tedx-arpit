@@ -117,17 +117,17 @@ function App() {
             <div className="flip" style = {{animationPlayState : `${scroll > 900 ? 'running' : 'paused'}`}}>FLIP</div>
             <div className="the" style = {{animationPlayState : `${scroll > 900 ? 'running' : 'paused'}`}}>THE</div>
           </div>
-          <div className="bottom-theme-name" onAnimationEnd={handleAnimationEnd} style={{transform : `translate(0, ${scriptPosition}px)`, animationName : `${animationName}`, animationDuration : `${animationName === 'text-appear' ? '1.5s' : animationName === 'flipping-animation-y' ? '0s' : '0.3s'}`, animationPlayState : `${scroll > 900 ? 'running' : 'paused'}`}}>SCRIPT</div>
+          <div className="bottom-theme-name" onAnimationEnd={handleAnimationEnd} style={{transform : `translate(0, ${scriptPosition}px)`, animationName : `${animationName}`, animationDuration : `${animationName === 'text-appear' ? '1s' : animationName === 'flipping-animation-y' ? '0s' : '0.3s'}`, animationPlayState : `${scroll > 900 ? 'running' : 'paused'}`}}>SCRIPT</div>
         </div>}
-        <div className="date-and-venue">
-          <div className="date">
+        {scroll > 950 && <div className="date-and-venue">
+          <div className="date" style = {{animationPlayState : `${scroll > 950 ? 'running' : 'paused'}`}}>
             <div className="date-number">25</div>
             <div className="th">th</div>
             <div className="date-month-year">August '24</div>
           </div>
           <div className="separation">|</div>
-          <div className="venue">DPU <br /> Auditorium</div>
-        </div>
+          <div className="venue" style = {{animationPlayState : `${scroll > 950 ? 'running' : 'paused'}`}}>DPU <br /> Auditorium</div>
+        </div>}
       </div>      
     </div>
   );
