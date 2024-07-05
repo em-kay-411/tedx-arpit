@@ -1,0 +1,8 @@
+.page2{
+    position: fixed;
+    width: 40vw;
+    height: 40vw;
+    background-color: red;
+    left: 50%;
+    top: 50%;
+}
