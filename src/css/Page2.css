@@ -10,16 +10,31 @@
     color: white;
 }
 
+
 .page2-x{
+    z-index: -1;
     position: fixed;
-    color: red;
-    opacity: 30%;
+    color: #eb0028;
+    opacity: 18%;
+    text-align: center;
+    /* width: 100vw; */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 100vh;
+    animation: rotate-animation 3s ease reverse infinite;
+}
+
+@keyframes rotate-animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .page2-heading{
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
 }
