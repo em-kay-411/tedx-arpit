@@ -1,8 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 .page2{
     position: fixed;
-    width: 40vw;
-    height: 40vw;
-    background-color: red;
+    width: 100vw;
+    height: 100vh;
     left: 50%;
     top: 50%;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    color: white;
+}
+
+.page2-x{
+    position: fixed;
+    color: red;
+    opacity: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 100vh;
+}
+
+.page2-heading{
+    display: flex;
+    flex-direction: column;
+}
+
+.page2-heading-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page2-flip{
+    font-size: 7.5rem;
+    font-weight: bolder;
+}
+
+.page2-the{
+    font-size: 2rem;
+    transform: translate(-10px, 88px);
+}
+
+.page2-script{
+    font-weight: bolder;
+    font-size: 5.5rem;
+    transform: rotate(180deg) translate(0px, 50px);
+}
+
+.page2-content{
+    font-size: 3rem;
+    font-weight: 100;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+@media all and (orientation : portrait) {
+    .page2-content{
+        font-size: 1.5rem;
+    }
 }

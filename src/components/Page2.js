@@ -9,6 +9,19 @@ function Page2() {
     const handleScroll = () => {
         // For portrait screens
         if (window.matchMedia("(orientation: portrait)").matches) {
+            if(window.scrollY < 2500){
+                setPage2Opacity(0);
+                setPage2Scale(0);
+            }
+
+            if (window.scrollY > 2500 && window.scrollY < 4000) {
+                handlePage2Entrance();
+            }
+
+            if(window.scrollY > 4000){
+                setPage2Opacity(1);
+                setPage2Scale(1);
+            }
         }
 
         // For landscape screens
@@ -44,7 +57,17 @@ function Page2() {
     }, [])
 
     return (
-        <div className="page2" style={{ opacity: `${page2Opacity}`, transform: `translate(-50%, -50%) scale(${page2Scale})` }}>Page 2</div>
+        <div className="page2" style={{ opacity: `${page2Opacity}`, transform: `translate(-50%, -50%) scale(${page2Scale})` }}>
+            <div className="page2-x">X</div>
+            <div className="page2-heading">
+                <div className="page2-heading-top">
+                    <div className="page2-flip">FLIP</div>
+                    <div className="page2-the">THE</div>
+                </div>                
+                <div className="page2-script">SCRIPT</div>
+            </div>
+            <div className="page2-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At eligendi alias ipsam eius? Voluptatum accusamus sequi, inventore nostrum, molestias quasi ad voluptatem doloribus quod amet error qui aspernatur architecto quaerat.</div>
+        </div>
     )
 }
 

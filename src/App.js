@@ -38,8 +38,19 @@ function App() {
         handleTopLogoContainer();
       }
 
-      if(window.scrollY > 610){
+      if(window.scrollY > 610 && window.scrollY < 2500){
         setTopLogoContainer(20);
+        setLogoContainerScale(1);
+        setLogoContainerX(-50);
+        setLogoContainerY(-50);
+        setBuildingImageX(0);
+        setBuildingImageY(-25);
+        setBuildingImageScale(1);
+      }
+
+      if(window.scrollY > 2500 && window.scrollY < 4000){
+        handleLogoContainerPassingByEffect();
+        handleBuildingImagePassingByEffect();
       }
       
       if(window.scrollY < 900){
@@ -63,6 +74,9 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
+        setBuildingImageX(0);
+        setBuildingImageY(-25);
+        setBuildingImageScale(1);
       }
 
       if(window.scrollY > 2500 && window.scrollY < 4000){
