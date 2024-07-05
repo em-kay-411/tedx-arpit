@@ -5,6 +5,7 @@ function Page2() {
 
     const [page2Opacity, setPage2Opacity] = useState(0);
     const [page2Scale, setPage2Scale] = useState(0);
+    const [mousePosition, setMousePosition] = useState('');
 
     const handleScroll = () => {
         // For portrait screens
@@ -48,17 +49,29 @@ function Page2() {
         setPage2Scale((1 / 1500) * (window.scrollY - 2500));
     }
 
+    // Fix this
+    const handleMouseMove = (event) => {
+        if(event.clientX < window.innerWidth / 2){
+            setMousePosition('left');
+        }
+        else{
+            setMousePosition('');
+        }
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, {passive : true});
+        window.addEventListener('mousemove', handleMouseMove);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.addEventListener('mousemove', handleMouseMove);
         }
     }, [])
 
     return (
         <div className="page2" style={{ opacity: `${page2Opacity}`, transform: `translate(-50%, -50%) scale(${page2Scale})` }}>
-            <div className="page2-x">X</div>
+            <div className="page2-x" style={{animationDirection : `${mousePosition === 'left' ? 'reverse' : 'forwards'}`}}>X</div>
             <div className="page2-heading">
                 <div className="page2-heading-top">
                     <div className="page2-flip">FLIP</div>

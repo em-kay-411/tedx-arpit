@@ -2,7 +2,7 @@ import './App.css';
 import logoWhite from './logo/logo-white.png';
 import logoBlack from './logo/logo-black.png';
 import background from './images/background.jpg';
-import building from './images/building.png';
+import building from './images/building.png'
 import { useEffect, useState, useRef } from 'react';
 import Page2 from './components/Page2';
 
@@ -19,9 +19,10 @@ function App() {
   const [logoContainerX, setLogoContainerX] = useState(-50);
   const [logoContainerY, setLogoContainerY] = useState(-50);
   const [logoContainerScale, setLogoContainerScale] = useState(1);
-  const [buildingImageX, setBuildingImageX] = useState(0);
-  const [buildingImageY, setBuildingImageY] = useState(-25);
+  const [buildingImageX, setBuildingImageX] = useState(-25);
+  const [buildingImageY, setBuildingImageY] = useState(0);
   const [buildingImageScale, setBuildingImageScale] = useState(1);
+  const [opacity, setOpacity] = useState(1);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -43,14 +44,20 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
-        setBuildingImageX(0);
-        setBuildingImageY(-25);
+        setBuildingImageX(-60);
+        setBuildingImageY(175);
         setBuildingImageScale(1);
+        setOpacity(1);
       }
 
       if(window.scrollY > 2500 && window.scrollY < 4000){
+        setOpacity((-1 / 1500) * (window.scrollY - 4000));
         handleLogoContainerPassingByEffect();
-        handleBuildingImagePassingByEffect();
+        handleBuildingImagePassingByEffectPortrait();
+      }
+
+      if(window.scrollY > 4000){
+        setOpacity(0);
       }
       
       if(window.scrollY < 900){
@@ -74,14 +81,20 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
-        setBuildingImageX(0);
-        setBuildingImageY(-25);
+        setBuildingImageX(-25);
+        setBuildingImageY(0);
         setBuildingImageScale(1);
+        setOpacity(1);
       }
 
       if(window.scrollY > 2500 && window.scrollY < 4000){
+        setOpacity((-1 / 1500) * (window.scrollY - 4000));
         handleLogoContainerPassingByEffect();
         handleBuildingImagePassingByEffect();
+      }
+
+      if(window.scrollY > 4000){
+        setOpacity(0);
       }
 
       if(window.scrollY < 900){
@@ -97,9 +110,14 @@ function App() {
   }
 
   const handleBuildingImagePassingByEffect = () => {
-    setBuildingImageX((500 /1500) * (window.scrollY - 2500));
-    setBuildingImageY(((15 / 1500) * (window.scrollY - 4000)) - 10);
     setBuildingImageScale(((4 / 1500) * (window.scrollY - 4000)) + 5);
+    setBuildingImageX(((125 / 1500) * (window.scrollY - 4000)) + 100);
+    setBuildingImageY(((50 / 1500) * (window.scrollY - 2500)));
+  }
+
+  const handleBuildingImagePassingByEffectPortrait = () => {
+    setBuildingImageScale(((4 / 1500) * (window.scrollY - 4000)) + 5);
+    setBuildingImageY(((325 / 1500) * (window.scrollY - 4000)) + 500);
   }
 
   const handleLeftBg = () => {
@@ -148,8 +166,8 @@ function App() {
   return (
     <div className="App">
       {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>}
-      {scroll > 600 && <img src={building} className='building-image' style={{transform : `translate(${buildingImageX}%, ${buildingImageY}%) scale(${buildingImageScale})`}}/>}
-      {scroll < 4000 && <div className="logo-entrance-container" style={{left : `${leftLogoContainer}%`, top : `${topLogoContainer}%`, transform: `translate(${logoContainerX}%, ${logoContainerY}%) scale(${logoContainerScale})`}} >
+      {scroll > 600 && <img src={building} className='building-image' style={{opacity : `${opacity}` ,transform : `translate(${buildingImageX}%, ${buildingImageY}%) scale(${buildingImageScale})`}}/>}
+      {scroll < 4000 && <div className="logo-entrance-container" style={{opacity : `${opacity}` ,left : `${leftLogoContainer}%`, top : `${topLogoContainer}%`, transform: `translate(${logoContainerX}%, ${logoContainerY}%) scale(${logoContainerScale})`}} >
         <img src={logoWhite} className='logo-entrance-img' style={{height : `${logoSize}vw`}} />
         {scroll > 700 && <div className="presents-text" style = {{animationPlayState : `${scroll > 700 ? 'running' : 'paused'}`}}>Presents</div>}
         {scroll > 1500 && <div className="theme-name">
