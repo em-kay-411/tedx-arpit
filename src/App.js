@@ -5,6 +5,7 @@ import background from './images/background.jpg';
 import building from './images/building.png'
 import { useEffect, useState, useRef } from 'react';
 import Page2 from './components/Page2';
+import Page3 from './components/Page3';
 
 function App() {
 
@@ -165,8 +166,8 @@ function App() {
 
   return (
     <div className="App">
-      {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>}
-      {scroll > 600 && <img src={building} className='building-image' style={{opacity : `${opacity}` ,transform : `translate(${buildingImageX}%, ${buildingImageY}%) scale(${buildingImageScale})`}}/>}
+      {/* {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>} */}
+      {scroll > 600 && scroll < 4000 && <img src={building} className='building-image' style={{opacity : `${opacity}` ,transform : `translate(${buildingImageX}%, ${buildingImageY}%) scale(${buildingImageScale})`}}/>}
       {scroll < 4000 && <div className="logo-entrance-container" style={{opacity : `${opacity}` ,left : `${leftLogoContainer}%`, top : `${topLogoContainer}%`, transform: `translate(${logoContainerX}%, ${logoContainerY}%) scale(${logoContainerScale})`}} >
         <img src={logoWhite} className='logo-entrance-img' style={{height : `${logoSize}vw`}} />
         {scroll > 700 && <div className="presents-text" style = {{animationPlayState : `${scroll > 700 ? 'running' : 'paused'}`}}>Presents</div>}
@@ -187,7 +188,8 @@ function App() {
           <div className="venue" style = {{animationPlayState : `${scroll > 1500 ? 'running' : 'paused'}`}}>DPU <br /> Auditorium</div>
         </div>}
       </div>} 
-      {scroll > 2500 && <Page2/>}
+      {scroll > 2500 && scroll < 6500 && <Page2/>}
+      {scroll > 6500 && <Page3/>}
     </div>
   );
 }

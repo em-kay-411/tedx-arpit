@@ -19,9 +19,13 @@ function Page2() {
                 handlePage2Entrance();
             }
 
-            if(window.scrollY > 4000){
+            if(window.scrollY > 4000 && window.scrollY < 5000){
                 setPage2Opacity(1);
                 setPage2Scale(1);
+            }
+
+            if(window.scrollY > 5000){
+                handlePage2Exit();
             }
         }
 
@@ -37,9 +41,13 @@ function Page2() {
                 handlePage2Entrance();
             }
 
-            if(window.scrollY > 4000){
+            if(window.scrollY > 4000 && window.scrollY < 5000){
                 setPage2Opacity(1);
                 setPage2Scale(1);
+            }
+
+            if(window.scrollY > 5000){
+                handlePage2Exit();
             }
         }
     }    
@@ -47,6 +55,11 @@ function Page2() {
     const handlePage2Entrance = () => {
         setPage2Opacity((1 / 1500) * (window.scrollY - 2500));
         setPage2Scale((1 / 1500) * (window.scrollY - 2500));
+    }
+
+    const handlePage2Exit = () => {
+        setPage2Opacity((-1 / 1500) * (window.scrollY - 6500));
+        setPage2Scale((-1 / 1500) * (window.scrollY - 6500));
     }
 
     // Fix this
