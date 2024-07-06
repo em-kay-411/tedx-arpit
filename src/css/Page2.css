@@ -76,6 +76,7 @@
 @media screen and (orientation : portrait) {
     .page2-content {
         font-size: 1.5rem;
+        line-height: 3vh;
     }
 
     .page2-x {
