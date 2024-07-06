@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 .page3{
     position: fixed;
     height: 100vh;
@@ -13,24 +14,26 @@
 }
 
 .page3-text{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .page3-content{
-    font-family: "IBM Plex Sans Condensed", sans-serif;
-    padding: 10%;
+    font-family: "Roboto", sans-serif;
+    padding: 7%;
     padding-top: 2%;
     padding-bottom: 2%;
     font-weight: 100;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: justify;
+    line-height: 7vh;
 }
 
 .page3-heading{
@@ -40,6 +43,19 @@
     font-weight: bolder;
     /* font-size: 2rem; */
     color: grey;
+    width: 30vw;
+}
+
+.page3-heading1{
+    width: 30vw;
+}
+
+.page3-heading2{
+    width: 30vw;
+}
+
+.page3-heading3{
+    width: 30vw;
 }
 
 .page3-heading1:hover{
@@ -61,8 +77,51 @@
 }
 
 .page3-heading3{
-    width: 20vw;
+    width: 30vw;
     display: flex;
+}
+
+.page3-dypit{
+    width: 33vw;
+    text-align: left;
+}
+
+@media screen and (orientation : portrait) {
+    .page3-text{
+        flex-direction: column;
+    }
+
+    .page3-content{
+        margin-top: 10vw;
+        text-align: center;
+        line-height: 3vh;
+        font-size: 1.3rem;
+    }
+
+    .page3-heading{
+        margin: 0;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .page3-heading1{
+        width: 100vw;
+    }
+
+    .page3-heading2{
+        width: 100vw;
+    }
+
+    .page3-heading3{
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page3-dypit{
+        width: auto;
+        text-align: center;
+    }
 }
 
 @keyframes appear {
@@ -73,5 +132,14 @@
     100%{
         transform: translate(0, 0);
         opacity: 1;
+    }
+}
+
+@keyframes appear-text {
+    0%{
+        transform: translate(0, 10px);
+    }
+    100%{
+        transform: translate(0, 0);
     }
 }
