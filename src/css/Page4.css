@@ -43,7 +43,7 @@
     border-bottom: 1px solid grey;
     width: 35vw;
     height: 30px;
-    text-align: center;
+    text-align: left;
     position: fixed;
     bottom: 40%;
     /* left: 83%; */
@@ -54,6 +54,17 @@
 @media screen and (orientation : portrait) {
     .page4-heading{
         font-size: 4rem;
+    }
+
+    .page4-list-of-speakers{
+        width: 100vw;
+        text-align: center;
+    }
+
+    .page4-speaker-description{
+        height: auto;
+        width: 50vw;
+        font-size: 0.8rem;
     }
 }
 
