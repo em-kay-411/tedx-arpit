@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+.page5{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-family: "Red Hat Display", 'sans-serif';
+}
+
+.page5-we{
+    /* position: fixed; */
+    color: rgb(194, 194, 194);
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+}
+
+.page5-description{
+    width: 38vw;
+    font-style: italic;
+    transform: translate(0px, -70px);
+}
+
+.page5-special {
+    text-align: left;
+    border-bottom: 1px solid grey;
+    position: fixed;
+    color: grey;
+    width: 50vw;
+    left: 50%;
+    top: 15rem;
+    font-size: 1.7rem;
+    animation: line-appear 1s ease-in forwards;
+    letter-spacing: 2px;
+}
+
+.page5-dhiraj-image{
+    position: fixed;
+    bottom: 0;
+    animation: appear 1s ease-in forwards;
+    filter: grayscale(70%);
+    right: 15vw;
+}
+
+.page5-image-info{
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    position: fixed;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    width: 20vw;
+    bottom: 40vh;
+    right: 50%;
+    bottom: 10px;
+}
+
+.page5-image-name{
+    font-size: 1.5rem;
+}
+
+.page5-image-description{
+    color: grey;
+    font-size: 0.9rem;
+}
+
+@keyframes appear {
+    0%{
+        opacity : 0;
+        transform: translate(0, 10px);
+    }
+    100%{
+        opacity : 1;
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes line-appear{
+    0%{
+        width: 15vw;
+    }
+    100%{
+        width: 50vw;
+    }
+}
+
+@media screen and (orientation : portrait) {
+    .page5-description{
+        position: fixed;
+        font-size: 0.75rem;
+        left: 50%;
+        width: 15rem;
+        transform: translate(-50%, -40px);
+    }
+
+    .page5-we{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page5-dhiraj-image{
+        right: 0;
+    }
+
+    .page5-image-info{
+        left: 2vw;
+        width: 80vw;
+        top: 40vh;
+        z-index: 2;
+    }
+}

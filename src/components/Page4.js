@@ -64,7 +64,7 @@ speakerDimensionsMapPortrait['Raj Kapoor'] = { height: 81, x: 0, y: 13 };
 // console.log(speakerDescriptionMap);
 
 function Page4() {
-
+    const [pageOpacity, setPageOpacity] = useState(1);
     const [speakerImage, setSpeakerImage] = useState(speaker1);
     const [headingOpacity, setHeadingOpacity] = useState(0);
     const [headingSpacing, setHeadingSpacing] = useState(0);
@@ -138,6 +138,12 @@ function Page4() {
 
             if (window.scrollY > 15500 && window.scrollY < 16000) {
                 handleSetSpeakerPortrait('Raj Kapoor');
+                setPageOpacity(1);
+            }
+
+            if(window.scrollY > 16500 && window.scrollY < 17000){
+                handleSetSpeakerPortrait('Raj Kapoor');
+                handlePageExit();
             }
         }
 
@@ -206,6 +212,12 @@ function Page4() {
 
             if (window.scrollY > 15500 && window.scrollY < 16000) {
                 handleSetSpeaker('Raj Kapoor');
+                setPageOpacity(1);
+            }
+
+            if(window.scrollY > 16500 && window.scrollY < 17000){
+                handleSetSpeaker('Raj Kapoor');
+                handlePageExit();
             }
         }
     }
@@ -248,6 +260,10 @@ function Page4() {
         setDescriptionPastY((-30 / 1000) * (window.scrollY - 13500));
     }
 
+    const handlePageExit = () => {
+        setPageOpacity((-1 / 500) * (window.scrollY - 17000));
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -257,7 +273,7 @@ function Page4() {
     })
 
     return (
-        <div className="page4">
+        <div className="page4" style={{opacity : `${pageOpacity}`}}>
             <div className="page4-heading" style={{
                 opacity: `${headingOpacity}`,
                 letterSpacing: `${headingSpacing}vw`,
@@ -273,8 +289,8 @@ function Page4() {
                 opacity: `${descriptionPastOpacity}`,
                 transform: `translate(0, ${descriptionPastY}%)`
             }}>from the past</div>}
-            {((window.scrollY > 9500 && window.scrollY < 12500) || (window.scrollY > 13500)) && <div className="page4-speaker-description">{speakerDescription}</div>}
-            {((window.scrollY > 9500 && window.scrollY < 12500) || (window.scrollY > 13500)) && <div className="page4-content">
+            {((window.scrollY > 9500 && window.scrollY < 12500) || (window.scrollY > 13500 && window.scrollY < 17000)) && <div className="page4-speaker-description">{speakerDescription}</div>}
+            {((window.scrollY > 9500 && window.scrollY < 12500) || (window.scrollY > 13500 && window.scrollY < 17000)) && <div className="page4-content">
                 <div className="page4-speaker-image">
                     {/* <img src={speakerImage} alt="" style={{transform: 'translate(0px, 0vh)'}} /> */}
                     <Image src={speakerImage} style={{
@@ -345,7 +361,7 @@ function Page4() {
                         animationName: `${speaker === 'Priya Jain' ? 'text-move' : ''}`,
                         animationDuration: `${speaker === 'Priya Jain' ? '1s' : ''}`
                     }}>PRIYA JAIN</div>}
-                    {window.scrollY > 13500 && window.scrollY < 16000 && <div className="page4-past-speaker-5" style={{
+                    {window.scrollY > 13500 && window.scrollY < 17000 && <div className="page4-past-speaker-5" style={{
                         fontSize: `${speaker === 'Raj Kapoor' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
                         color: `${speaker === 'Raj Kapoor' ? 'white' : '#3a3a3a'}`,
                         animationName: `${speaker === 'Raj Kapoor' ? 'text-move' : ''}`,

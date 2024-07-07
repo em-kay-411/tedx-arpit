@@ -64,7 +64,6 @@
 
 @media screen and  (orientation : portrait) {
   .building-image{
-    transform: translate(-60%, 175%);
     height: 35vh;
   }
 }

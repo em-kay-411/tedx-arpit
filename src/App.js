@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from 'react';
 import Page2 from './components/Page2';
 import Page3 from './components/Page3';
 import Page4 from './components/Page4';
+import Page5 from './components/Page5';
 
 function App() {
 
@@ -46,7 +47,7 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
-        setBuildingImageX(-60);
+        setBuildingImageX(-65);
         setBuildingImageY(175);
         setBuildingImageScale(1);
         setOpacity(1);
@@ -83,7 +84,7 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
-        setBuildingImageX(-25);
+        setBuildingImageX(-35);
         setBuildingImageY(0);
         setBuildingImageScale(1);
         setOpacity(1);
@@ -113,7 +114,7 @@ function App() {
 
   const handleBuildingImagePassingByEffect = () => {
     setBuildingImageScale(((4 / 1500) * (window.scrollY - 4000)) + 5);
-    setBuildingImageX(((125 / 1500) * (window.scrollY - 4000)) + 100);
+    setBuildingImageX(((135 / 1500) * (window.scrollY - 4000)) + 100);
     setBuildingImageY(((50 / 1500) * (window.scrollY - 2500)));
   }
 
@@ -218,7 +219,8 @@ function App() {
       </div>}
       {scroll > 2500 && scroll < 6500 && <Page2 />}
       {scroll > 6500 && scroll < 8500 && <Page3 />}
-      {scroll > 8500 &&  <Page4 />}
+      {scroll > 8500 && scroll < 17000 && <Page4 />}
+      {scroll > 17000 && <Page5 />}
     </div>
   );
 }
