@@ -273,7 +273,7 @@ function Page4() {
             {((window.scrollY > 9500 && window.scrollY < 12500) || (window.scrollY > 13500)) && <div className="page4-content">
                 <div className="page4-speaker-image">
                     {/* <img src={speakerImage} alt="" style={{transform: 'translate(0px, 0vh)'}} /> */}
-                    <Image src={speakerImage} style={{ zIndex:'-1', height: `${window.matchMedia("(orientation: portrait)").matches ? '70vh' : '100vh'}`, transform: `${window.matchMedia("(orientation: portrait)").matches ? 'translate(20vw, 20vh)' : 'translate(10vw, -30vh)'}` }} fluid />
+                    <Image src={speakerImage} style={{ zIndex:'-1', height: `${window.matchMedia("(orientation: portrait)").matches ? '70vh' : '100vh'}`, transform: `${window.matchMedia("(orientation: portrait)").matches ? 'translate(0vw, 20vh)' : 'translate(10vw, -30vh)'}` }} fluid />
                 </div>
                 <div className="page4-speaker-description">{speakerDescription}</div>
                 <div className="page4-list-of-speakers">

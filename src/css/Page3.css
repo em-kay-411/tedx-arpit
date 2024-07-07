@@ -41,7 +41,8 @@
     margin-left: 5%;
     text-align: left;
     font-family: "Red Hat Display", sans-serif;
-    font-weight: bolder;
+    font-weight: 300;
+    letter-spacing: 11px;
     /* font-size: 2rem; */
     color: grey;
     width: 30vw;
@@ -103,6 +104,7 @@
         margin: 0;
         text-align: center;
         width: 100vw;
+        letter-spacing: 6px;
     }
 
     .page3-heading1{

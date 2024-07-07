@@ -7,7 +7,7 @@
     height: 100vh;
     left: 50%;
     top: 50%;
-    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     color: white;
 }
 
@@ -41,6 +41,7 @@
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
+    font-weight: bolder;
 }
 
 .page2-heading-top {
@@ -50,8 +51,7 @@
 }
 
 .page2-flip {
-    font-size: 7.5rem;
-    font-weight: bolder;
+    font-size: 7.5rem;    
 }
 
 .page2-the {
