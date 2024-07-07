@@ -9,36 +9,24 @@ contentMap['TEDxDYPIT'] = 'Lorem ipsum dolor sit amet consectetur adipisicing el
 function Page3() {
     const [heading, setHeading] = useState('TED');
     const [content, setContent] = useState(contentMap['TED']);
+    const [opacity, setOpacity] = useState(1);
+    const [translate, setTranslate] = useState(1);
     const contentRef = useRef(null);
 
     const handleScroll = () => {
         // For portrait screens
         if (window.matchMedia("(orientation: portrait)").matches) {
-            if (window.scrollY < 7500) {
-                handleTEDClick();
-            }
-
-            if (window.scrollY > 7500 && window.scrollY < 8500) {
-                handleTEDxClick();
-            }
-
-            if (window.scrollY > 8500 && window.scrollY < 9500) {
-                handleTEDxDYPITClick();
+            if (window.scrollY > 8000) {
+                setOpacity((-1 / 500) * (window.scrollY - 8500));
+                setTranslate((10 / 500) * (window.scrollY - 8000));
             }
         }
 
         // For landscape screens
         if (window.matchMedia("(orientation: landscape)").matches) {
-            if (window.scrollY < 7500) {
-                handleTEDClick();
-            }
-
-            if (window.scrollY > 7500 && window.scrollY < 8500) {
-                handleTEDxClick();
-            }
-
-            if (window.scrollY > 8500 && window.scrollY < 9500) {
-                handleTEDxDYPITClick();
+            if (window.scrollY > 8000) {
+                setOpacity((-1 / 500) * (window.scrollY - 8500));
+                setTranslate((10 / 500) * (window.scrollY - 8000));
             }
         }
     }
@@ -79,18 +67,21 @@ function Page3() {
     }, [content])
 
     return (
-        <div className="page3">
+        <div className="page3" >
             <div className="page3-text">
-                <div className="page3-heading">
+                <div className="page3-heading" style={{
+                    opacity: `${opacity}`,
+                    transform: `translate(${-translate}%, 0)`
+                }}>
                     <div className="page3-heading1"
-                        onClick={() => window.scrollTo(0, 6501)}
+                        onClick={handleTEDClick}
                         style={{
                             fontSize: `${heading === 'TED' ? window.matchMedia("(orientation: portrait)").matches ? '8rem' : '10rem' : '2rem'}`,
                             color: `${heading === 'TED' ? '#eb0028' : 'grey'}`, animationName: `${heading === 'TED' ? 'appear-text' : ''}`,
                             animationDuration: `${heading === 'TED' ? '1s' : ''}`
                         }} >TED</div>
                     <div className="page3-heading2"
-                        onClick={() => window.scrollTo(0, 7501)}
+                        onClick={handleTEDxClick}
                         style={{
                             fontSize: `${heading === 'TEDx' ? window.matchMedia("(orientation: portrait)").matches ? '8rem' : '10rem' : '2rem'}`,
                             color: `${heading === 'TEDx' ? '#eb0028' : 'grey'}`,
@@ -98,7 +89,7 @@ function Page3() {
                             animationDuration: `${heading === 'TEDx' ? '1s' : ''}`
                         }} >TEDx</div>
                     <div className="page3-heading3"
-                        onClick={() => window.scrollTo(0, 8501)}
+                        onClick={handleTEDxDYPITClick}
                         style={{
                             fontSize: `${heading === 'TEDxDYPIT' ? window.matchMedia("(orientation: portrait)").matches ? '8rem' : '10rem' : '2rem'}`,
                             color: `${heading === 'TEDxDYPIT' ? '#eb0028' : 'grey'}`,
@@ -112,11 +103,17 @@ function Page3() {
                                 transform: `${heading === 'TEDxDYPIT' ? window.matchMedia("(orientation: portrait)").matches ? 'translate(0px, -30px)' : 'translate(0px, -35px)' : ''}`,
                                 fontSize: '2rem',
                                 color: `${heading === 'TEDxDYPIT' ? '#eb0028' : 'grey'}`,
-                                textAlign : `${heading === 'TEDxDYPIT' ? 'center' : 'left'}`
+                                textAlign: `${heading === 'TEDxDYPIT' ? 'center' : 'left'}`
                             }}>DYPIT Pimpri</div>
                     </div>
                 </div>
-                <div className="page3-content" ref={contentRef}>{content}</div>
+                <div className="page3-content"
+                    ref={contentRef}
+                    style={{
+                        opacity: `${opacity}`,
+                        transform: `translate(${translate}%, 0)`
+                    }}
+                >{content}</div>
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import building from './images/building.png'
 import { useEffect, useState, useRef } from 'react';
 import Page2 from './components/Page2';
 import Page3 from './components/Page3';
+import Page4 from './components/Page4';
 
 function App() {
 
@@ -216,7 +217,8 @@ function App() {
         </div>}
       </div>}
       {scroll > 2500 && scroll < 6500 && <Page2 />}
-      {scroll > 6500 && <Page3 />}
+      {scroll > 6500 && scroll < 8500 && <Page3 />}
+      {scroll > 8500 &&  <Page4 />}
     </div>
   );
 }
