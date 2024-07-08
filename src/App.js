@@ -84,7 +84,7 @@ function App() {
         setLogoContainerScale(1);
         setLogoContainerX(-50);
         setLogoContainerY(-50);
-        setBuildingImageX(-35);
+        setBuildingImageX(-40);
         setBuildingImageY(0);
         setBuildingImageScale(1);
         setOpacity(1);
@@ -114,7 +114,7 @@ function App() {
 
   const handleBuildingImagePassingByEffect = () => {
     setBuildingImageScale(((4 / 1500) * (window.scrollY - 4000)) + 5);
-    setBuildingImageX(((135 / 1500) * (window.scrollY - 4000)) + 100);
+    setBuildingImageX(((140 / 1500) * (window.scrollY - 4000)) + 100);
     setBuildingImageY(((50 / 1500) * (window.scrollY - 2500)));
   }
 
