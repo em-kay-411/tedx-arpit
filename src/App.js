@@ -8,6 +8,7 @@ import Page2 from './components/Page2';
 import Page3 from './components/Page3';
 import Page4 from './components/Page4';
 import Page5 from './components/Page5';
+import RegisterButton from './components/RegisterButton';
 
 function App() {
 
@@ -168,6 +169,7 @@ function App() {
 
   return (
     <div className="App">
+      <RegisterButton/>
       {/* {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>} */}
       {scroll > 600 && scroll < 4000 && <img src={building}
         className='building-image'

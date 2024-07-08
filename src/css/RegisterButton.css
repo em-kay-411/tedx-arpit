@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+.register-button{
+    z-index: 3;
+    font-family: 'Red Hat Display', 'sans-serif';
+    letter-spacing: 1.5px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    bottom: 4%;
+    background-color: #eb0028;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #eb0028;
+    height: 40px;
+    width: 120px;
+    box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
+    animation: 2s forwards ease;
+}
+
+.register-button:hover{
+    cursor: pointer;
+    animation: change-color 0.2s ease-in forwards;
+}
+
+@keyframes button-appear{
+    0%{
+        transform: translate(-50%, 50px);
+        background-color: rgb(176, 176, 176);
+        border-color: white;
+        border-radius: 20px;
+        width: 40px;
+    }
+    40%{
+        transform: translate(-50%, -40px);
+        background-color: rgb(176, 176, 176);
+        border-color: white;
+        border-radius: 20px;
+        width: 40px;
+    }
+    70%{
+        transform: translate(-50%, -20px);
+        background-color: rgb(176, 176, 176);
+        border-color: white;
+        border-radius: 20px;
+        width: 40px;
+    }
+    100%{
+        border-radius: 10px;
+        background-color: #eb0028;
+        width: 120px;
+    }
+}
+
+@keyframes change-color{
+    0%{
+        background-color: #eb0028;
+        color: white;
+        border: 1px solid #eb0028;
+        letter-spacing: 1.5px;
+        box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
+    }
+    100%{
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+}
+
+.register-button-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
