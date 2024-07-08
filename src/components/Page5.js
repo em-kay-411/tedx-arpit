@@ -42,7 +42,7 @@ function Page5() {
 
             if(window.scrollY > 18500){
                 setImageName('MR. DHEERAJ AGARWAL');
-                setImageDescription(nameInfoMap['MR. DHIRAJ AGARWAL']);
+                setImageDescription(nameInfoMap['MR. DHEERAJ AGARWAL']);
             }
         }
 
