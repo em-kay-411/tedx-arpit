@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import dhirajImage from '../team/dhiraj.png';
 
 const nameInfoMap = {};
-nameInfoMap['MR. DHIRAJ AGARWAL'] = 'Director - Center of Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
+nameInfoMap['MR. DHEERAJ AGARWAL'] = 'Director - Center of Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
 
 function Page5() {
 
     const [fontSizeW, setFontSizeW] = useState(1);
     const [fontSizeE, setFontSizeE] = useState(1);
     const [weOpacity, setWeOpacity] = useState(0);
-    const [imageName, setImageName] = useState('MR. DHIRAJ AGARWAL');
-    const [imageDescription, setImageDescription] = useState('Director - Center of Corporate Relations, Dr. D Y Patil Unitech Society, Pune')
+    const [imageName, setImageName] = useState('MR. DHEERAJ AGARWAL');
+    const [imageDescription, setImageDescription] = useState('Director - Center of Corporate Relations, <br> Dr. D Y Patil Unitech Society, Pune')
 
     const handleScroll = () => {
         // For portrait screens
@@ -41,7 +41,7 @@ function Page5() {
             }
 
             if(window.scrollY > 18500){
-                setImageName('MR. DHIRAJ AGARWAL');
+                setImageName('MR. DHEERAJ AGARWAL');
                 setImageDescription(nameInfoMap['MR. DHIRAJ AGARWAL']);
             }
         }
@@ -73,8 +73,8 @@ function Page5() {
             }
 
             if(window.scrollY > 18500){
-                setImageName('MR. DHIRAJ AGARWAL');
-                setImageDescription(nameInfoMap['MR. DHIRAJ AGARWAL']);
+                setImageName('MR. DHEERAJ AGARWAL');
+                setImageDescription(nameInfoMap['MR. DHEERAJ AGARWAL']);
             }
         }
     }
