@@ -11,7 +11,7 @@ function Page5() {
     const [fontSizeE, setFontSizeE] = useState(1);
     const [weOpacity, setWeOpacity] = useState(0);
     const [imageName, setImageName] = useState('MR. DHEERAJ AGARWAL');
-    const [imageDescription, setImageDescription] = useState('Director - Center of Corporate Relations, <br> Dr. D Y Patil Unitech Society, Pune')
+    const [imageDescription, setImageDescription] = useState('Director - Center of Corporate Relations,    Dr. D Y Patil Unitech Society, Pune')
 
     const handleScroll = () => {
         // For portrait screens
