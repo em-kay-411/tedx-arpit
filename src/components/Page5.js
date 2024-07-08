@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import dhirajImage from '../team/dhiraj.png';
 
 const nameInfoMap = {};
-nameInfoMap['MR. DHEERAJ AGARWAL'] = 'Director - Center of Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
+nameInfoMap['MR. DHEERAJ AGARWAL'] = 'Director - Central Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
 
 function Page5() {
 
