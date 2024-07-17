@@ -144,6 +144,9 @@ function Page4() {
             if(window.scrollY > 16500 && window.scrollY < 17000){
                 handleSetSpeakerPortrait('Raj Kapoor');
                 handlePageExit();
+                setHeadingOpacity(1);
+                setHeadingSpacing(2.7);
+                setHeadingY(0);
             }
         }
 
@@ -216,6 +219,9 @@ function Page4() {
             }
 
             if(window.scrollY > 16500 && window.scrollY < 17000){
+                setHeadingOpacity(1);
+                setHeadingSpacing(2.7);
+                setHeadingY(0);
                 handleSetSpeaker('Raj Kapoor');
                 handlePageExit();
             }

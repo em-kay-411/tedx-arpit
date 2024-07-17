@@ -169,7 +169,7 @@ function App() {
 
   return (
     <div className="App">
-      {window.scrollY > 1000 && <RegisterButton/>}
+      {window.scrollY > 1500 && <RegisterButton/>}
       {/* {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>} */}
       {scroll > 600 && scroll < 4000 && <img src={building}
         className='building-image'

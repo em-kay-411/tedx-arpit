@@ -44,8 +44,6 @@
 }
 
 .page5-image-info{
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
     position: fixed;
     padding-left: 2%;
     padding-right: 2%;
@@ -53,9 +51,8 @@
     padding-bottom: 2px;
     text-align: left;
     width: 20vw;
-    bottom: 40vh;
     right: 50%;
-    bottom: 10px;
+    bottom: 100px;
 }
 
 .page5-image-name{
