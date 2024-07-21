@@ -1,4 +1,5 @@
 import '../css/RegistrationForm.css';
+import { TextField } from '@mui/material';
 
 function RegistrationForm ({formRendered, setFormRendered}) {
 
@@ -14,6 +15,11 @@ function RegistrationForm ({formRendered, setFormRendered}) {
                 <div className="registration-form-close"
                     onClick={handleRegistrationFormClose}
                 >&#x2715;</div>
+
+                <div className="registration-form-fields">
+                    <TextField className="registration-form-first-name" label="First Name" variant="outlined" />
+                    <TextField className="registration-form-last-name" label="Last Name" variant="outlined" />
+                </div>
             </div>}
         </>        
     )
