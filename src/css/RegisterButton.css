@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 .register-button{
-    z-index: 3;
+    z-index: 8;
     font-family: 'Red Hat Display', 'sans-serif';
     letter-spacing: 1.5px;
     position: fixed;
@@ -52,6 +52,21 @@
     }
 }
 
+@keyframes button-disappear {
+    0%{
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+    100%{
+        border-radius: 0px;
+        background-color: grey;
+        width: 120px;
+    }
+}
+
 @keyframes change-color{
     0%{
         background-color: #eb0028;
@@ -62,8 +77,8 @@
     }
     100%{
         background-color: transparent;
-        color: white;
-        border: 1px solid white;
+        color: grey;
+        border: 1px solid grey;
         letter-spacing: 1px;
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
     }

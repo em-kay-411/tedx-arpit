@@ -22,21 +22,17 @@ function RegisterButton() {
 
     const handleRegisterClick = () => {
         setFormRendered(!formRendered);
-
-        if(formRendered){
-            
-        }
     }
 
     return (
         <>
-            <RegistrationForm visibility={formRendered} />
+            {formRendered && <RegistrationForm formRendered={formRendered} setFormRendered={setFormRendered} />}
             {!formRendered && <div className='register-button'
                 onMouseEnter={() => setAnimation('change-color')}
                 onMouseLeave={() => setAnimation('')}
                 style={{ animationName: `${animation}` }}
                 onAnimationEnd={() => setRegisterVisibility('visible')}
-                onClick={() => setFormRendered(!formRendered)}
+                onClick={handleRegisterClick}
             >
                 <div className="register-button-text" style={{ visibility: `${registerVisibility}` }}>
                     REGISTER
