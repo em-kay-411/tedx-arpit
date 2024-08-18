@@ -1,0 +1,41 @@
+.box {
+    transform: translate(-50%, 0);
+    width: 43px;
+    position: fixed;
+}
+
+.box span {
+    left: 28%;
+    position: absolute;
+    top: 70%;
+    display: block;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    animation: animate 2s infinite;
+}
+
+.box span:nth-child(2) {
+    top: 100%;
+    animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+    top: 130%;
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

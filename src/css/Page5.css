@@ -39,7 +39,6 @@
     position: fixed;
     bottom: 0;
     animation: appear 1s ease-in forwards;
-    filter: grayscale(70%);
     right: 15vw;
 }
 

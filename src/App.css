@@ -14,6 +14,14 @@
   opacity: 0.2;
 }
 
+.instruction {
+  width: 100%;
+  font-family: "Red Hat Display", sans-serif;
+  bottom: 8vh;
+  position: fixed;
+  color: white;
+}
+
 .logo-entrance-container{
   border-radius: 10px;
   position: fixed;
@@ -27,6 +35,21 @@
   flex-direction: column;
   /* animation: appear ease-out 0.8s forwards; */
   /* animation-delay: 1s; */
+}
+
+.speakers-instruction{
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: "Red Hat Display", sans-serif;
+  position: fixed;
+  bottom: 3vh;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.498);
+}
+
+.speakers-instruction:hover{
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.637);
 }
 
 @keyframes appear {

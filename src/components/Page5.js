@@ -1,16 +1,18 @@
 import '../css/Page5.css';
 import { useEffect, useState } from 'react';
 import dhirajImage from '../team/dhiraj.png';
+import YashrajPatil from '../team/YashrajPatil.png';
 
 const nameInfoMap = {};
-nameInfoMap['MR. DHEERAJ AGARWAL'] = 'Director - Central Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
+nameInfoMap['PROF. DHEERAJ AGARWAL'] = 'Director - Central Corporate Relations, Dr. D Y Patil Unitech Society, Pune';
+nameInfoMap['PROF. YASHRAJ PATIL'] = 'Faculty Coordinator, TEDxDYPITPimpri'
 
 function Page5() {
 
     const [fontSizeW, setFontSizeW] = useState(1);
     const [fontSizeE, setFontSizeE] = useState(1);
     const [weOpacity, setWeOpacity] = useState(0);
-    const [imageName, setImageName] = useState('MR. DHEERAJ AGARWAL');
+    const [imageName, setImageName] = useState('PROF. DHEERAJ AGARWAL');
     const [imageDescription, setImageDescription] = useState('Director - Center of Corporate Relations,    Dr. D Y Patil Unitech Society, Pune')
 
     const handleScroll = () => {
@@ -35,14 +37,20 @@ function Page5() {
                 handleOpacityChange();
             }
 
-            if(window.scrollY > 18100 && window.scrollY < 18500){
+            if(window.scrollY > 18100){
+                setFontSizeE(10);
                 setFontSizeW(10);
                 setWeOpacity(1);
             }
 
-            if(window.scrollY > 18500){
-                setImageName('MR. DHEERAJ AGARWAL');
-                setImageDescription(nameInfoMap['MR. DHEERAJ AGARWAL']);
+            if(window.scrollY > 18500 && window.scrollY < 20500){
+                setImageName('PROF. DHEERAJ AGARWAL');
+                setImageDescription(nameInfoMap['PROF. DHEERAJ AGARWAL']);
+            }
+
+            if(window.scrollY > 20500 && window.scrollY < 22500){
+                setImageName('PROF. YASHRAJ PATIL');
+                setImageDescription(nameInfoMap['PROF. YASHRAJ PATIL'])
             }
         }
 
@@ -67,14 +75,20 @@ function Page5() {
                 handleOpacityChange();
             }
 
-            if(window.scrollY > 18100 && window.scrollY < 18500){
+            if(window.scrollY > 18100){
+                setFontSizeE(22);
                 setFontSizeW(22);
                 setWeOpacity(1);
             }
 
-            if(window.scrollY > 18500){
-                setImageName('MR. DHEERAJ AGARWAL');
-                setImageDescription(nameInfoMap['MR. DHEERAJ AGARWAL']);
+            if(window.scrollY > 18500 && window.scrollY < 20500){
+                setImageName('PROF. DHEERAJ AGARWAL');
+                setImageDescription(nameInfoMap['PROF. DHEERAJ AGARWAL']);
+            }
+
+            if(window.scrollY > 20500 && window.scrollY < 22500){
+                setImageName('PROF. YASHRAJ PATIL');
+                setImageDescription(nameInfoMap['PROF. YASHRAJ PATIL'])
             }
         }
     }
@@ -122,10 +136,11 @@ function Page5() {
                 </div>
             </div>}
             {window.scrollY > 18100 && <div className="page5-description">
-                a line-up behind the scenes of TEDxDYPIT Pimpri
+                a line-up behind the scenes of TEDxDYPITPimpri
             </div>}
             {window.scrollY > 18500 && <div className="page5-special">Special Thanks</div>}
-            {window.scrollY > 18500 && <img className="page5-dhiraj-image" src={dhirajImage} alt="" />}
+            {window.scrollY > 18500 && window.scrollY < 20500 && <img className="page5-dhiraj-image" src={dhirajImage} alt="" />}
+            {window.scrollY > 20500 && <img className="page5-dhiraj-image" src={YashrajPatil} alt="" />}
         </div>
     )
 }

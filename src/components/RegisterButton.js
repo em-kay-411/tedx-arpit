@@ -1,33 +1,17 @@
 import '../css/RegisterButton.css';
 import { useState } from 'react';
-import RegistrationForm from './RegistrationForm';
 
 function RegisterButton() {
-
-    const [scroll, setScroll] = useState(window.scrollY);
     const [animation, setAnimation] = useState('button-appear');
     const [registerVisibility, setRegisterVisibility] = useState('hidden');
-    const [formRendered, setFormRendered] = useState(false);
 
-    const handleScroll = () => {
-        setScroll(window.scrollY);
-        // For portrait screens
-        if (window.matchMedia("(orientation: portrait)").matches) {
-        }
-
-        // For landscape screens
-        if (window.matchMedia("(orientation: landscape)").matches) {
-        }
-    }
-
-    const handleRegisterClick = () => {
-        setFormRendered(!formRendered);
+    const handleRegisterClick = () =>{
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLScX8eRPk-DzDG1V58pDp_kTdvHRiFcCZ9Mqdi9nfwtBVeJ8bw/viewform", '_blank');
     }
 
     return (
         <>
-            {formRendered && <RegistrationForm formRendered={formRendered} setFormRendered={setFormRendered} />}
-            {!formRendered && <div className='register-button'
+            <div className='register-button'
                 onMouseEnter={() => setAnimation('change-color')}
                 onMouseLeave={() => setAnimation('')}
                 style={{ animationName: `${animation}` }}
@@ -37,7 +21,7 @@ function RegisterButton() {
                 <div className="register-button-text" style={{ visibility: `${registerVisibility}` }}>
                     REGISTER
                 </div>
-            </div>}
+            </div>
         </>
     )
 }

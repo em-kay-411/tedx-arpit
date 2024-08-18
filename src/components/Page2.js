@@ -97,7 +97,7 @@ function Page2() {
                 </div>
                 <div className="page2-script">SCRIPT</div>
             </div>
-            <div className="page2-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At eligendi alias ipsam eius? Voluptatum accusamus sequi, inventore nostrum, molestias quasi ad voluptatem doloribus quod amet error qui aspernatur architecto quaerat.</div>
+            <div className="page2-content">It's all about redefining norms and breaking out of established patterns. Whether through personal stories, social issues, or technological advancements, this we encourage individuals to rewrite the rules and inspire others to see the world differently. It emphasizes transformation, resilience, and the power of change in both small and significant ways.</div>
         </div>
     )
 }
