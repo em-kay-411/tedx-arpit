@@ -1,6 +1,10 @@
 import '../css/Page4.css';
 import { useState, useEffect } from 'react';
-import speaker1 from '../speakers/speaker1.png';
+import VishwasNangarePatil from '../speakers/VishwasNangrePatil.png'
+import RohiniPatil from '../speakers/RohiniPatil.png';
+import SandeepAdani from '../speakers/SandeepAdani.png';
+import AbhishekKar from '../speakers/AbhishekKar.png';
+import VijaypalRawat from '../speakers/VijaypalRawat.png'
 import speaker2 from '../speakers/speaker2.png';
 import AayushSharma from '../speakers/AayushSharma.png';
 import AgastyaShah from '../speakers/AgastyaShah.png';
@@ -10,12 +14,12 @@ import RajKapoor from '../speakers/RajKapoor.png';
 import Image from 'react-bootstrap/Image';
 
 const speakerDescriptionMap = {};
-speakerDescriptionMap['Speaker 1'] = 'Indian Actor, Bollywood Celebrity';
-speakerDescriptionMap['Speaker 2'] = 'Speaker 2 Description';
-speakerDescriptionMap['Speaker 3'] = 'Speaker 3 Description';
-speakerDescriptionMap['Speaker 4'] = 'Speaker 4 Description';
-speakerDescriptionMap['Speaker 5'] = 'Speaker 5 Description';
-speakerDescriptionMap['Speaker 6'] = 'Speaker 6 Description';
+speakerDescriptionMap['Vishwas Nangare Patil'] = 'Additional Director General of the Anti-Corruption Bureau, Maharashtra';
+speakerDescriptionMap['Rohini Patil'] = 'MBBS, Nuritionist, Author, Entrepreneur';
+speakerDescriptionMap['Sandeep Adani'] = 'Sandeep Adani Description';
+speakerDescriptionMap['Abhishek Kar'] = 'Abhishek Kar Description';
+speakerDescriptionMap['Bharat Chandak'] = 'Bharat Chandak Description';
+speakerDescriptionMap['Vijaypal Singh Rawat'] = 'Vijaypal Singh Rawat Description';
 speakerDescriptionMap['Aayush Sharma'] = 'Indian Actor, Bollywood Celebrity';
 speakerDescriptionMap['Agastya Shah'] = 'YouTuber, Content Creator';
 speakerDescriptionMap['Pranjal Kamra'] = 'CEO @ Finology Ventures, Finance Content Creator';
@@ -23,12 +27,12 @@ speakerDescriptionMap['Priya Jain'] = 'Social Engineer';
 speakerDescriptionMap['Raj Kapoor'] = 'Founder and CEO, India Blockchain Alliance';
 
 const speakerImageMap = {};
-speakerImageMap['Speaker 1'] = speaker1;
-speakerImageMap['Speaker 2'] = speaker2;
-speakerImageMap['Speaker 3'] = speaker1;
-speakerImageMap['Speaker 4'] = speaker2;
-speakerImageMap['Speaker 5'] = speaker1;
-speakerImageMap['Speaker 6'] = speaker2;
+speakerImageMap['Vishwas Nangare Patil'] = VishwasNangarePatil;
+speakerImageMap['Rohini Patil'] = RohiniPatil;
+speakerImageMap['Sandeep Adani'] = SandeepAdani;
+speakerImageMap['Abhishek Kar'] = AbhishekKar;
+speakerImageMap['Bharat Chandak'] = speaker2;
+speakerImageMap['Vijaypal Singh Rawat'] = VijaypalRawat;
 speakerImageMap['Aayush Sharma'] = AayushSharma;
 speakerImageMap['Agastya Shah'] = AgastyaShah;
 speakerImageMap['Pranjal Kamra'] = PranjalKamra;
@@ -36,12 +40,12 @@ speakerImageMap['Priya Jain'] = PriyaJain;
 speakerImageMap['Raj Kapoor'] = RajKapoor;
 
 const speakerDimensionsMap = {};
-speakerDimensionsMap['Speaker 1'] = { height: 100, x: 10, y: -30 };
-speakerDimensionsMap['Speaker 2'] = { height: 100, x: 10, y: -30 };
-speakerDimensionsMap['Speaker 3'] = { height: 100, x: 10, y: -30 };
-speakerDimensionsMap['Speaker 4'] = { height: 100, x: 10, y: -30 };
-speakerDimensionsMap['Speaker 5'] = { height: 100, x: 10, y: -30 };
-speakerDimensionsMap['Speaker 6'] = { height: 100, x: 10, y: -30 };
+speakerDimensionsMap['Vishwas Nangare Patil'] = { height: 80, x: 5, y: -10 };
+speakerDimensionsMap['Rohini Patil'] = { height: 100, x: 1, y: -10 };
+speakerDimensionsMap['Sandeep Adani'] = { height: 80, x:-1, y: -10 };
+speakerDimensionsMap['Abhishek Kar'] = { height: 85, x: 0, y: -15 };
+speakerDimensionsMap['Bharat Chandak'] = { height: 100, x: 10, y: -30 };
+speakerDimensionsMap['Vijaypal Singh Rawat'] = { height: 90, x: 0, y: -20 };
 speakerDimensionsMap['Aayush Sharma'] = { height: 100, x: 10, y: -30 };
 speakerDimensionsMap['Agastya Shah'] = { height: 87, x: 10, y: -17 };
 speakerDimensionsMap['Pranjal Kamra'] = { height: 87, x: 10, y: -17 };
@@ -49,15 +53,15 @@ speakerDimensionsMap['Priya Jain'] = { height: 130, x: 5, y: -40 };
 speakerDimensionsMap['Raj Kapoor'] = { height: 110, x: 10, y: -35 };
 
 const speakerDimensionsMapPortrait = {};
-speakerDimensionsMapPortrait['Speaker 1'] = { height: 70, x: 0, y: 20 };
-speakerDimensionsMapPortrait['Speaker 2'] = { height: 70, x: 0, y: 20 };
-speakerDimensionsMapPortrait['Speaker 3'] = { height: 70, x: 0, y: 20 };
-speakerDimensionsMapPortrait['Speaker 4'] = { height: 70, x: 0, y: 20 };
-speakerDimensionsMapPortrait['Speaker 5'] = { height: 70, x: 0, y: 20 };
-speakerDimensionsMapPortrait['Speaker 6'] = { height: 70, x: 0, y: 20 };
+speakerDimensionsMapPortrait['Vishwas Nangare Patil'] = { height: 65, x: -5, y: 32 };
+speakerDimensionsMapPortrait['Rohini Patil'] = { height: 70, x: -5, y: 32 };
+speakerDimensionsMapPortrait['Sandeep Adani'] = { height: 60, x: -10, y: 30 };
+speakerDimensionsMapPortrait['Abhishek Kar'] = { height: 65, x: -3, y:25 };
+speakerDimensionsMapPortrait['Bharat Chandak'] = { height: 70, x: 0, y: 20 };
+speakerDimensionsMapPortrait['Vijaypal Singh Rawat'] = { height: 75, x: -10, y: 15 };
 speakerDimensionsMapPortrait['Aayush Sharma'] = { height: 70, x: 0, y: 20 };
 speakerDimensionsMapPortrait['Agastya Shah'] = { height: 63, x: 0, y: 30 };
-speakerDimensionsMapPortrait['Pranjal Kamra'] = { height: 70, x: 0, y: 20 };
+speakerDimensionsMapPortrait['Pranjal Kamra'] = { height: 70, x: 0, y: 25 };
 speakerDimensionsMapPortrait['Priya Jain'] = { height: 90, x: 0, y: 7 };
 speakerDimensionsMapPortrait['Raj Kapoor'] = { height: 81, x: 0, y: 13 };
 
@@ -65,15 +69,15 @@ speakerDimensionsMapPortrait['Raj Kapoor'] = { height: 81, x: 0, y: 13 };
 
 function Page4() {
     const [pageOpacity, setPageOpacity] = useState(1);
-    const [speakerImage, setSpeakerImage] = useState(speaker1);
+    const [speakerImage, setSpeakerImage] = useState(VishwasNangarePatil);
     const [headingOpacity, setHeadingOpacity] = useState(0);
     const [headingSpacing, setHeadingSpacing] = useState(0);
     const [headingY, setHeadingY] = useState(50);
-    const [speaker, setSpeaker] = useState('Speaker 1');
+    const [speaker, setSpeaker] = useState('Vishwas Nangare Patil');
     const [speakerImageHeight, setSpeakerImageHeight] = useState(speakerDimensionsMap[speaker].height);
     const [speakerImageX, setSpeakerImageX] = useState(speakerDimensionsMap[speaker].x);
     const [speakerImageY, setSpeakerImageY] = useState(speakerDimensionsMap[speaker].y);
-    const [speakerDescription, setSpeakerDescription] = useState(speakerDescriptionMap['Speaker 1']);
+    const [speakerDescription, setSpeakerDescription] = useState(speakerDescriptionMap['Vishwas Nangare Patil']);
     const [descriptionPastOpacity, setDescriptionPastOpacity] = useState(0);
     const [descriptionPastY, setDescriptionPastY] = useState(30);
 
@@ -90,27 +94,27 @@ function Page4() {
                 setHeadingOpacity(1);
                 setHeadingSpacing(2.7);
                 setHeadingY(0);
-                handleSetSpeakerPortrait('Speaker 1');
+                handleSetSpeakerPortrait('Vishwas Nangare Patil');
             }
 
             if (window.scrollY > 10000 && window.scrollY < 10500) {
-                handleSetSpeakerPortrait('Speaker 2');
+                handleSetSpeakerPortrait('Rohini Patil');
             }
 
             if (window.scrollY > 10500 && window.scrollY < 11000) {
-                handleSetSpeakerPortrait('Speaker 3');
+                handleSetSpeakerPortrait('Bharat Chandak');
             }
 
             if (window.scrollY > 11000 && window.scrollY < 11500) {
-                handleSetSpeakerPortrait('Speaker 4');
+                handleSetSpeakerPortrait('Sandeep Adani');
             }
 
             if (window.scrollY > 11500 && window.scrollY < 12000) {
-                handleSetSpeakerPortrait('Speaker 5');
+                handleSetSpeakerPortrait('Abhishek Kar');
             }
 
             if (window.scrollY > 12000 && window.scrollY < 12500) {
-                handleSetSpeakerPortrait('Speaker 6');
+                handleSetSpeakerPortrait('Vijaypal Singh Rawat');
             }
 
             if (window.scrollY > 12500 && window.scrollY < 13500) {
@@ -162,27 +166,27 @@ function Page4() {
                 setHeadingOpacity(1);
                 setHeadingSpacing(2.7);
                 setHeadingY(0);
-                handleSetSpeaker('Speaker 1');
+                handleSetSpeaker('Vishwas Nangare Patil');
             }
 
             if (window.scrollY > 10000 && window.scrollY < 10500) {
-                handleSetSpeaker('Speaker 2');
+                handleSetSpeaker('Rohini Patil');
             }
 
             if (window.scrollY > 10500 && window.scrollY < 11000) {
-                handleSetSpeaker('Speaker 3');
+                handleSetSpeaker('Bharat Chandak');
             }
 
             if (window.scrollY > 11000 && window.scrollY < 11500) {
-                handleSetSpeaker('Speaker 4');
+                handleSetSpeaker('Sandeep Adani');
             }
 
             if (window.scrollY > 11500 && window.scrollY < 12000) {
-                handleSetSpeaker('Speaker 5');
+                handleSetSpeaker('Abhishek Kar');
             }
 
             if (window.scrollY > 12000 && window.scrollY < 12500) {
-                handleSetSpeaker('Speaker 6');
+                handleSetSpeaker('Vijaypal Singh Rawat');
             }
 
             if (window.scrollY > 12500 && window.scrollY < 13500) {
@@ -308,41 +312,41 @@ function Page4() {
                 </div>
                 <div className="page4-list-of-speakers">
                     {window.scrollY < 10000 && <div className="page4-present-speaker-1" style={{
-                        fontSize: `${speaker === 'Speaker 1' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 1' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 1' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 1' ? '1s' : ''}`
-                    }}>SPEAKER ONE</div>}
+                        fontSize: `${speaker === 'Vishwas Nangare Patil' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Vishwas Nangare Patil' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Vishwas Nangare Patil' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Vishwas Nangare Patil' ? '1s' : ''}`
+                    }}>VISHWAS NANGRE PATIL</div>}
                     {window.scrollY < 10500 && <div className="page4-present-speaker-2" style={{
-                        fontSize: `${speaker === 'Speaker 2' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 2' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 2' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 2' ? '1s' : ''}`
-                    }}>SPEAKER TWO</div>}
-                    {window.scrollY < 11000 && <div className="page4-present-speaker-3" style={{
-                        fontSize: `${speaker === 'Speaker 3' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 3' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 3' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 3' ? '1s' : ''}`
-                    }}>SPEAKER THREE</div>}
-                    {window.scrollY < 11500 && <div className="page4-present-speaker-4" style={{
-                        fontSize: `${speaker === 'Speaker 4' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 4' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 4' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 4' ? '1s' : ''}`
-                    }}>SPEAKER FOUR</div>}
-                    {window.scrollY < 12000 && <div className="page4-present-speaker-5" style={{
-                        fontSize: `${speaker === 'Speaker 5' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 5' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 5' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 5' ? '1s' : ''}`
-                    }}>SPEAKER FIVE</div>}
+                        fontSize: `${speaker === 'Rohini Patil' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Rohini Patil' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Rohini Patil' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Rohini Patil' ? '1s' : ''}`
+                    }}>DR. ROHINI PATIL</div>}
+                    {window.scrollY < 11000 && <div className="page4-present-speaker-5" style={{
+                        fontSize: `${speaker === 'Bharat Chandak' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Bharat Chandak' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Bharat Chandak' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Bharat Chandak' ? '1s' : ''}`
+                    }}>BHARAT CHANDAK</div>}
+                    {window.scrollY < 11500 && <div className="page4-present-speaker-3" style={{
+                        fontSize: `${speaker === 'Sandeep Adani' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Sandeep Adani' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Sandeep Adani' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Sandeep Adani' ? '1s' : ''}`
+                    }}>SANDEEP ADANI</div>}
+                    {window.scrollY < 12000 && <div className="page4-present-speaker-4" style={{
+                        fontSize: `${speaker === 'Abhishek Kar' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Abhishek Kar' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Abhishek Kar' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Abhishek Kar' ? '1s' : ''}`
+                    }}>ABHISHEK KAR</div>}
                     {window.scrollY < 12500 && <div className="page4-present-speaker-6" style={{
-                        fontSize: `${speaker === 'Speaker 6' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
-                        color: `${speaker === 'Speaker 6' ? 'white' : '#3a3a3a'}`,
-                        animationName: `${speaker === 'Speaker 6' ? 'text-move' : ''}`,
-                        animationDuration: `${speaker === 'Speaker 6' ? '1s' : ''}`
-                    }}>ARTIST</div>}
+                        fontSize: `${speaker === 'Vijaypal Singh Rawat' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
+                        color: `${speaker === 'Vijaypal Singh Rawat' ? 'white' : '#3a3a3a'}`,
+                        animationName: `${speaker === 'Vijaypal Singh Rawat' ? 'text-move' : ''}`,
+                        animationDuration: `${speaker === 'Vijaypal Singh Rawat' ? '1s' : ''}`
+                    }}>VIJAYPAL SINGH RAWAT</div>}
                     {window.scrollY > 13500 && window.scrollY < 14000 && <div className="page4-past-speaker-1" style={{
                         fontSize: `${speaker === 'Aayush Sharma' ? window.matchMedia("(orientation: portrait)").matches ? '2rem' : '3.5rem' : window.matchMedia("(orientation: portrait)").matches ? '1.5rem' : '2rem'}`,
                         color: `${speaker === 'Aayush Sharma' ? 'white' : '#3a3a3a'}`,

@@ -17,8 +17,10 @@ function RegistrationForm ({formRendered, setFormRendered}) {
                 >&#x2715;</div>
 
                 <div className="registration-form-fields">
-                    <TextField className="registration-form-first-name" label="First Name" variant="outlined" />
-                    <TextField className="registration-form-last-name" label="Last Name" variant="outlined" />
+                    <TextField type='text' className="registration-form-field" label="First Name" variant="outlined" />
+                    <TextField type='text' className="registration-form-field" label="Last Name" variant="outlined" />
+                    <TextField type='tel' className="registration-form-field" label="Contact no." variant="outlined" />
+                    <TextField type='email' className="registration-form-field" label="Email" variant="outlined" />
                 </div>
             </div>}
         </>        

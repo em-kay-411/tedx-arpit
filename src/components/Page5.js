@@ -122,7 +122,7 @@ function Page5() {
                 </div>
             </div>}
             {window.scrollY > 18100 && <div className="page5-description">
-                a line-up behind the scenes making TEDxDYPIT Pimpri happen
+                a line-up behind the scenes of TEDxDYPIT Pimpri
             </div>}
             {window.scrollY > 18500 && <div className="page5-special">Special Thanks</div>}
             {window.scrollY > 18500 && <img className="page5-dhiraj-image" src={dhirajImage} alt="" />}

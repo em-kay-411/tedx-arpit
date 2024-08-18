@@ -42,3 +42,9 @@
         border-radius: 10px;
     }
 }
+
+.registration-form-fields{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}

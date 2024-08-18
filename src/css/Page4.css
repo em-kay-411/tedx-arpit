@@ -41,8 +41,7 @@
 .page4-speaker-description{
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
-    width: 35vw;
-    height: 30px;
+    width: 36vw;
     text-align: left;
     position: fixed;
     bottom: 5%;
@@ -63,7 +62,7 @@
 
     .page4-speaker-description{
         height: auto;
-        width: 50vw;
+        width: 55vw;
         font-size: 0.8rem;
         bottom: 52%;
     }
