@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 const contentMap = {};
 contentMap['TED'] = 'TED is a non-profit that believes powerful ideas, powerfully presented, move us: to feel something, to think differently, to take action. In a world that can feel dark and overwhelming, these ideas have ripple effects of many magnitudes, pointing toward the possibility of a better future for people, communities and humanity at large.';
 contentMap['TEDx'] = 'A TEDx event is a local gathering where live TED-like talks and performances are shared with the community. TEDx events are fully planned and coordinated independently, on a community-by-community basis. The content and design of each TEDx event is unique and developed by each organizing team.'
-contentMap['TEDxDYPIT'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus saepe deserunt incidunt officiis sunt, at culpa possimus repudiandae velit tempore non perspiciatis illo ipsum, vero labore quod similique ullam?';
+contentMap['TEDxDYPIT'] = 'A private event under the license of TED conducted by TEDxDYPITPimpri. We focus on talks that are inspiringly out of the way and things that are revolutionise.';
 
 function Page3() {
     const [heading, setHeading] = useState('TED');

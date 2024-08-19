@@ -173,7 +173,7 @@ function App() {
     <div className="App">
       {<div className="instruction"> {window.scrollY < 30 ? 'Scroll down for the TEDxDYPITPimpri experience' : ''} <ScrollDown/></div>}
       {window.scrollY < 1500 && <div className="speakers-instruction" onClick={() => window.scrollTo({top : 9500, behavior : 'smooth'})}>SKIP TO SPEAKERS</div>}
-      {window.scrollY > 1500 && <RegisterButton/>}
+      {window.scrollY > 1500 && window.scrollY < 21500 && <RegisterButton/>}
       {/* {scroll <= 500 && <img src={background} className='bg-image-entrance' style= {{width : '100vw', left : `${bgLeft}%`, display : `${screenWidth > 1024 ? 'block' : 'none'}`}}/>} */}
       {scroll > 600 && scroll < 4000 && <img src={building} alt='building'
         className='building-image'
@@ -226,8 +226,8 @@ function App() {
       {scroll > 2500 && scroll < 6500 && <Page2 />}
       {scroll > 6500 && scroll < 8500 && <Page3 />}
       {scroll > 8500 && scroll < 17000 && <Page4 />}
-      {scroll > 17000 && scroll < 21500 && <Page5 />}
-      {scroll > 21500 && <Footer/>}
+      {scroll > 17000 && scroll < 23500 && <Page5 />}
+      {scroll > 22500 && <Footer/>}
     </div>
   );
 }
